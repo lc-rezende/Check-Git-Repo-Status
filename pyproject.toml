@@ -2,6 +2,13 @@
 name = "check-git-repo-status"
 version = "0.1.0"
 description = "Check git repositories for GitHub remotes and unpushed changes"
+authors = [
+    {name = "Lucas Rezende", email = "lucas.c.rezende@gmail.com"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+repository = "https://github.com/lc-rezende/Check-Git-Repo-Status"
+keywords = ["git", "github", "repository", "status", "unpushed", "commits"]
 requires-python = ">=3.9"
 dependencies = []
 
