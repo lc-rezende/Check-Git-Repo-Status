@@ -10,9 +10,9 @@ Scans directories for git repositories and checks:
 import argparse
 import subprocess
 import sys
-from pathlib import Path
 from dataclasses import dataclass
-from typing import List, Tuple, Optional
+from pathlib import Path
+from typing import List, Optional, Tuple
 
 
 @dataclass
@@ -38,9 +38,11 @@ def parse_arguments() -> argparse.Namespace:
         """
     )
     parser.add_argument(
-        "-p", "--path",
+        "-p",
+        "--path",
         type=str,
-        help="Path to check (single repo or directory containing repos). Defaults to current directory."
+        help="Path to check (single repo or directory containing repos). "
+        "Defaults to current directory.",
     )
     return parser.parse_args()
 
@@ -271,7 +273,9 @@ def get_last_commit_info(repo_path: Path) -> Optional[str]:
         return None
 
 
-def format_report(target_path: Path, repos_no_github: List[str], repos_with_unpushed: List[RepoStatus]) -> None:
+def format_report(
+    target_path: Path, repos_no_github: List[str], repos_with_unpushed: List[RepoStatus]
+) -> None:
     """Format and print the status report."""
     separator = "=" * 80
     subseparator = "-" * 80
@@ -280,12 +284,6 @@ def format_report(target_path: Path, repos_no_github: List[str], repos_with_unpu
     print("Git Repository Status Report")
     print(separator)
     print()
-
-    # Calculate total repos
-    total_repos = len(repos_no_github) + len(repos_with_unpushed)
-
-    # Add repos that are up to date (not in either list)
-    # This is implicit in the count but not explicit
 
     print(f"Target path: {target_path}")
 
