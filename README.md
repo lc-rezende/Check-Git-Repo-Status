@@ -1,3 +1,5 @@
+[![Tests](https://github.com/lc-rezende/Check-Git-Repo-Status/actions/workflows/test.yml/badge.svg)](https://github.com/lc-rezende/Check-Git-Repo-Status/actions/workflows/test.yml)
+
 # Check Git Repo Status
 
 A Python tool to scan git repositories and identify:
